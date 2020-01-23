@@ -24,7 +24,7 @@ tns build android --release --key-store-path C:\androidKey\voiceGuideReleaseKey.
 
 ***LvivGuide (branch lviv-guide)***
 - id: com.bs.voiceguidelviv
-- android:label: "LvivGuide"
+- "android:label": "LvivGuide"
 - CFBundleDisplayName: "LvivGuide"
 - CFBundleName: "LvivGuide"
 - DESTINATION_ID: 6;
