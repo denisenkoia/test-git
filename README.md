@@ -23,7 +23,7 @@ tns build android --release --key-store-path C:\androidKey\voiceGuideReleaseKey.
 - constant.js (DESTINATION_ID, APPLICATION_ID, NOTIFICATION_SUFFIX, NOTIFICATION_ID)
 
 ***LvivGuide (branch lviv-guide)***
-- id: com.bs.voiceguidelviv
+- "id": "com.bs.voiceguidelviv"
 - "android:label": "LvivGuide"
 - CFBundleDisplayName: "LvivGuide"
 - CFBundleName: "LvivGuide"
@@ -98,5 +98,98 @@ tns prepare ios --release
 
 
 ### CLI generate component
+
+* ng g component components/my-component --skipImport=true
+
+
+
+
+
+
+
+
+
+
+
+# Voice Guide #
+
+### Release ###
+
+* Android
+path - C:\androidKey\voiceGuideReleaseKey.jks
+password - 123456
+alias - key0
+tns build android --release --key-store-path C:\androidKey\voiceGuideReleaseKey.jks --key-store-password 123456 --key-store-alias key0 --key-store-alias-password 123456
+
+* IOS
+
+
+### Build ###
+
+При сборке нового приложения меняем файлы
+- package.json (id)
+- AndroidManifest.xml (android:label) 
+- Info.plist (CFBundleDisplayName, CFBundleName)
+- constant.js (APPLICATION_ID, NOTIFICATION_SUFFIX, NOTIFICATION_ID)
+
+* LvivGuide (branch master)
+id: com.bs.voiceguidelviv
+android:label: "LvivGuide"
+CFBundleDisplayName: "LvivGuide"
+CFBundleName: "LvivGuide"
+APPLICATION_ID: 2
+NOTIFICATION_SUFFIX: 'LVIVGUIDE'
+NOTIFICATION_ID: parseInt('LVIVGUIDE', 32)
+
+* VoiceGuide (branch multi-destination)
+id: com.bs.voiceguide
+android:label: "VoiceGuide";
+CFBundleDisplayName: "VoiceGuide";
+CFBundleName: "VoiceGuide";
+APPLICATION_ID: 3;
+NOTIFICATION_SUFFIX: 'VOICEGUIDE';
+NOTIFICATION_ID: parseInt('VOICEGUIDE', 32);
+
+* VoiceGuide (branch voiceguide-europe)
+id: com.bs.voiceguideeurope
+android:label: "EuropeGuide";
+CFBundleDisplayName: "EuropeGuide";
+CFBundleName: "EuropeGuide";
+APPLICATION_ID: 4;
+NOTIFICATION_SUFFIX: 'EUROPEGUIDE';
+NOTIFICATION_ID: parseInt('EUROPEGUIDE', 32);
+
+* KrakowGuide (branch krakow-guide)
+id: com.guidexp.krakowguide
+android:label: "KrakowGuide";
+CFBundleDisplayName: "KrakowGuide";
+CFBundleName: "KrakowGuide";
+DESTINATION_ID: 26;
+APPLICATION_ID: 5;
+NOTIFICATION_SUFFIX: 'KRAKOWGUIDE';
+NOTIFICATION_ID: parseInt('KRAKOWGUIDE', 32);
+
+
+### Stack ###
+
+* Nativescript
+* Angular
+* Node 8.11.2
+* npm 5.6.0
+
+
+### Run ###
+
+* tns run android
+* tns run ios
+
+
+### Build ###
+
+* tns build android
+* tns build ios
+
+
+### CLI generate component ###
 
 * ng g component components/my-component --skipImport=true
